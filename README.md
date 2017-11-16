@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/prestoncarman/python_server.svg?branch=develop)](https://travis-ci.org/prestoncarman/python_server)
+
 # REST API for ASWWU
 This is a python based REST api that ASWWU web uses for EVERYTHING.
 
@@ -41,7 +43,7 @@ class SearchAllHandler(BaseHandler):
 ```
 
 ## Testing
-We have continuous integration working on this project however it doesn't actually use any of the actual python server code. :( You can run a dummy test by running the following command. 
+We have continuous integration working on this project however it doesn't actually use any of the actual python server code. :( You can run a dummy test by running the following command.
 ```
 pytest
 ```
