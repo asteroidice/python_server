@@ -1,0 +1,14 @@
+bandit
+bleach
+codacy-coverage
+codeclimate-test-reporter
+coverage
+coveralls
+Pattern
+pytest
+pytest-cov
+python-coveralls
+requests
+SQLAlchemy
+tornado
+names
