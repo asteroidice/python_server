@@ -8,7 +8,7 @@ from sqlalchemy.orm import sessionmaker, joinedload
 import src.aswwu.models.bases as base
 import src.aswwu.models.mask as mask_model
 from src.aswwu.archive_models import ArchiveBase
-from settings import database
+from settings import DATABASE
 
 Base = base.Base
 ElectionBase = base.ElectionBase
@@ -21,11 +21,16 @@ logger = logging.getLogger("aswwu")
 
 # defines the databases URLs relative to "server.py"
 # ?check_same_thread=False should only be a temp fix
-engine = create_engine("sqlite://" + database['location'] + "/people.db?check_same_thread=False")
-archive_engine = create_engine("sqlite://" + database['location'] + "/archives.db?check_same_thread=False")
-election_engine = create_engine("sqlite://" + database['location'] + "/senate_elections.db?check_same_thread=False")
-pages_engine = create_engine("sqlite://" + database['location'] + "/pages.db?check_same_thread=False")
-jobs_engine = create_engine("sqlite://" + database['location'] + "/jobs.db?check_same_thread=False")
+engine = create_engine("sqlite://" + \
+    DATABASE['location'] + "/people.db?check_same_thread=False")
+archive_engine = create_engine("sqlite://" + \
+    DATABASE['location'] + "/archives.db?check_same_thread=False")
+election_engine = create_engine("sqlite://" + \
+    DATABASE['location'] + "/senate_elections.db?check_same_thread=False")
+pages_engine = create_engine("sqlite://" + \
+    DATABASE['location'] + "/pages.db?check_same_thread=False")
+jobs_engine = create_engine("sqlite://" + \
+    DATABASE['location'] + "/jobs.db?check_same_thread=False")
 
 # create the model tables if they don't already exist
 Base.metadata.create_all(engine)
