@@ -21,16 +21,18 @@ logger = logging.getLogger("aswwu")
 
 # defines the databases URLs relative to "server.py"
 # ?check_same_thread=False should only be a temp fix
-engine = create_engine("sqlite://" + \
-    DATABASE['location'] + "/people.db?check_same_thread=False")
-archive_engine = create_engine("sqlite://" + \
+engine = create_engine(
+    "sqlite://" + DATABASE['location'] + "/people.db?check_same_thread=False")
+archive_engine = create_engine(
+    "sqlite://" +
     DATABASE['location'] + "/archives.db?check_same_thread=False")
-election_engine = create_engine("sqlite://" + \
+election_engine = create_engine(
+    "sqlite://" +
     DATABASE['location'] + "/senate_elections.db?check_same_thread=False")
-pages_engine = create_engine("sqlite://" + \
-    DATABASE['location'] + "/pages.db?check_same_thread=False")
-jobs_engine = create_engine("sqlite://" + \
-    DATABASE['location'] + "/jobs.db?check_same_thread=False")
+pages_engine = create_engine(
+    "sqlite://" + DATABASE['location'] + "/pages.db?check_same_thread=False")
+jobs_engine = create_engine(
+    "sqlite://" + DATABASE['location'] + "/jobs.db?check_same_thread=False")
 
 # create the model tables if they don't already exist
 Base.metadata.create_all(engine)
